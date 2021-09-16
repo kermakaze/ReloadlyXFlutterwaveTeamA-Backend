@@ -10,11 +10,11 @@ const CampaignSchema = new Schema({
     title: {type:String, required: true},
     slug: {type: String, slug: "title"},
     description:{type:String, required: true},
-    goalAmount: {type: Number, required: true},
+    goalAmount: {type: Number, required: true},//Funds are in USD
 
-    currentAmount: {type: Number, required: true, default: 0},
+    currentAmount: {type: Number, required: true, default: 0},//Funds are in USD
 
-    status: {type: String, enum: ['ONGOING','CLOSED','FULLY_FUNDED']},
+    status: {type: String, enum: ['ONGOING','CLOSED','FULLY_FUNDED'], default:'ONGOING'},
 
     type: {type: String, enum: ['NANO_DEGREE','AIRTIME', 'OTHER']},//TODO add types more as idea matures
 
@@ -31,4 +31,4 @@ CampaignSchema.set('toObject', {virtuals: true});
 
 const Campaign = mongoose.model('Campaign', CampaignSchema);
 
-module.exports = CampaignSchema;
+module.exports = Campaign;
