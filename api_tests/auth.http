@@ -1,20 +1,20 @@
 ### Auth Register
-POST http://localhost:3000/api/register
+POST {{BASE_URL}}/register
 Content-Type: application/json
 
 {
-  "email": "kermakaze98@icloud.mcmommkk",
+  "email": "ukojielvis@gmail.com",
   "password": "0243649608",
   "name": "Elvis Ukoji Solomon"
 }
 ###
 
 ### Auth login
-POST http://localhost:3000/api/login
+POST {{BASE_URL}}/login
 Content-Type: application/json
 
 {
-  "email": "kermakaze98@iclomud.cmommkk",
+  "email": "ukojielvis@gmail.com",
   "password": "0243649608"
 }
 ###
