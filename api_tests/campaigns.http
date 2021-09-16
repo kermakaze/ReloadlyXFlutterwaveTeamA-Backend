@@ -1,12 +1,12 @@
 
 GET {{BASE_URL}}/campaigns
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNDM4NjBkYzNhOTU5Y2RjMWM2Yzk2ZSIsImlhdCI6MTYzMTgxNTE4MX0.jOfs4-yxTQSuNdZFQLNocERkSmVndlygZkdo6kPfVK8
+Authorization: Bearer {{accessToken}}
 ###Get all campaigns
 
 ### post campaign
 POST {{BASE_URL}}/campaigns
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNDM4NjBkYzNhOTU5Y2RjMWM2Yzk2ZSIsImlhdCI6MTYzMTgxNTE4MX0.jOfs4-yxTQSuNdZFQLNocERkSmVndlygZkdo6kPfVK8
+Authorization: Bearer {{accessToken}}
 
 {
   "title": "Lorep Ipsum",
