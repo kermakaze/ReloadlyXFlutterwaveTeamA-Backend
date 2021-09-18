@@ -3,10 +3,10 @@ POST {{BASE_URL}}/register
 Content-Type: application/json
 
 {
-  "email": "ukoji1elvis@gmail.com",
+  "email": "kfrimpong1@gmail.com",
   "password": "0243649608",
-  "firstName": "Elvis",
-  "lastName": "Solomon"
+  "firstName": "Kwaku",
+  "lastName": "Frimpong"
 }
 ###
 

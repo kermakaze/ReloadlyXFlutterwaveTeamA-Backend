@@ -1,5 +1,5 @@
 
-GET {{BASE_URL}}/beneficiary/6143860dc3a959cdc1c6c96e
+GET {{BASE_URL}}/beneficiary/6145c34061405d47d4147e1b
 Authorization: Bearer {{accessToken}}
 ###Get Beneficary by Id
 
