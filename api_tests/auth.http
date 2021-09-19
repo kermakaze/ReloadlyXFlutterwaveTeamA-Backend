@@ -1,9 +1,12 @@
+@BASE_URL = https://redeemfund-api.herokuapp.com/api
+
+
 ### Auth Register
 POST {{BASE_URL}}/register
 Content-Type: application/json
 
 {
-  "email": "ukojielvis@gmail.com",
+  "email": "ukojielvis+1@gmail.com",
   "password": "0243649608",
   "name": "Elvis Ukoji Solomon"
 }
@@ -14,7 +17,7 @@ POST {{BASE_URL}}/login
 Content-Type: application/json
 
 {
-  "email": "ukojielvis@gmail.com",
+  "email": "ukojielvis+1@gmail.com",
   "password": "0243649608"
 }
 ###

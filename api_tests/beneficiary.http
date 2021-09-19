@@ -1,5 +1,8 @@
+@BASE_URL = https://redeemfund-api.herokuapp.com/api
+@accessToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNDM4YTgwN2Q4MTFkZWY5NjEwYTNmMSIsImlhdCI6MTYzMTgxNjMyMH0.5dCEC5StIOTno3Ys-RiK8iwVEc3f-HYHcrH7IM8ilNo
 
-GET {{BASE_URL}}/beneficiary/6143860dc3a959cdc1c6c96e
+
+GET {{BASE_URL}}/beneficiary/6144c97d8b960a72b544601d
 Authorization: Bearer {{accessToken}}
 ###Get Beneficary by Id
 
