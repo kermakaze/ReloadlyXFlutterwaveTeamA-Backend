@@ -19,3 +19,21 @@ Content-Type: application/json
   "password": "0243649608"
 }
 ###
+
+### Password Reset
+POST {{BASE_URL}}/password-reset
+Content-Type: application/json
+
+{
+  "email": "ukojielvis@gmail.com"
+}
+###
+
+### Password Reset
+POST {{BASE_URL}}/set-new-password/
+Content-Type: application/json
+
+{
+  "email": "ukojielvis@gmail.com"
+}
+###
