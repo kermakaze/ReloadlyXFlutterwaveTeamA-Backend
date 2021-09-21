@@ -1,3 +1,4 @@
+
 const Campaign = require('../models/Campaign');
 const ResponseUtils = require('../utils/ResponseUtils');
 
@@ -27,5 +28,11 @@ module.exports = {
     async getCampaigns(req, res){
         let campaigns = await Campaign.find();//TODO add filters and pagination
         res.send(campaigns);
+    },
+
+    async getCampaignBySlug(req, res) {
+        let campaign = await Campaign.findOne({slug: req.params['campaign_slug']})
+        res.send(campaign);
     }
+
 }

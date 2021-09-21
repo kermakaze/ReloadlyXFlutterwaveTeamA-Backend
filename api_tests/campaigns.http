@@ -1,3 +1,18 @@
+POST {{BASE_URL}}/make-payment/testing-campaignkkdkd-1
+Content-Type: application/json
+
+{
+  "phoneNumber" : "0552587984",
+  "fullName": "Elvis Ukoji Solomon",
+  "email": "k98@gmail.com",
+  "amount": 100
+}
+###Test payment link
+
+
+
+GET {{BASE_URL}}/campaign/testing-campaignkkdkd-1
+###Get campaign by slug
 
 GET {{BASE_URL}}/campaigns
 Authorization: Bearer {{accessToken}}
@@ -15,3 +30,4 @@ Authorization: Bearer {{accessToken}}
 
 }
 ###
+
