@@ -31,7 +31,6 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
 app.use('/api', Routes);
-app.use('/webhook', require('./routes/webhooks'));
 
 app.listen(process.env.PORT, () => {
     console.log(`App listening on port ${process.env.PORT}`);
