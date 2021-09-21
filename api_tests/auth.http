@@ -27,9 +27,9 @@ Content-Type: application/json
 {
   "email": "ukojielvis@gmail.com"
 }
-###
+###Password reset
 
-### Password Reset
+### Set new password after reset
 POST {{BASE_URL}}/set-new-password/
 Content-Type: application/json
 

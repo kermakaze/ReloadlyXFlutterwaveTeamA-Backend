@@ -1,4 +1,6 @@
 const ResponseUtils = require('../utils/ResponseUtils');
+const EmailUtils = require('../utils/EmailUtils');
+
 const Beneficiary = require('../models/Beneficiary');
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
@@ -90,6 +92,11 @@ module.exports = {
             return ResponseUtils.sendError(res,401, "No account exists for the email provided: " + req.body.email);
         }
 
+        const link =  `${process.env.BASE_URL}/api/validate-password/${token}`
+        await EmailUtils.sendEmailWithSendGrid(user.email,"Please reset your password",
+            "Please click on this link to reset your password\n\n" + link);
+
+
        res.send({
            success: true,
            link: `${process.env.BASE_URL}/api/validate-password/${token}`
@@ -105,8 +112,9 @@ module.exports = {
             return ResponseUtils.sendError(res,403, 'Link could not be verified, please try again!');
 
         }
+       res.redirect('https://redeemfund-emalindahk.vercel.app/change-password/' + token);
 
-        ResponseUtils.sendGenericResponse(res);//TODO redirect to client change password page
+        
     },
 
     async setNewPassword(req, res){
