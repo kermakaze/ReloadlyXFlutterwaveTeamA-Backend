@@ -21,7 +21,7 @@ module.exports = {
             "tx_ref": referenceNumber,
             "amount": amountUSD,
 
-            "redirect_url": `${process.env.BASE_URL}/webhook/transaction_status`,
+            "redirect_url": 'https://redeemfund-emalindahk.vercel.app/',
 
 
             "currency": "USD",
