@@ -5,7 +5,7 @@ const PaymentController = require('../controllers/PaymentController');
 
 
 
-router.get('/flutterwave_webhook', PaymentController.getPaymentLinkForCampaign);
+router.post('/flutterwave_webhook', PaymentController.validatePaymentForCampaign);
 
 
 module.exports = router;

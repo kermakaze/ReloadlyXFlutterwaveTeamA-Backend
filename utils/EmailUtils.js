@@ -20,8 +20,8 @@ module.exports = {
     sendEmailWithSendGrid(recipientEmail, subject, body) {
 
         const msg = {
-            to: recipientEmail, // Change to your recipient
-            from: process.env.EMAIL_KEY, // Change to your verified sender
+            to: recipientEmail,
+            from: process.env.EMAIL_KEY, 
             subject: subject,
             text: body,
         }
