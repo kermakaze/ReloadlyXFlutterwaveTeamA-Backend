@@ -49,7 +49,8 @@ module.exports = {
         try {
             //TODO enforce validation
             const user = await Beneficiary.create({
-                name: registerData.name,
+                firstName: registerData.firstName,
+                lastName: registerData.lastName,
                 email: registerData.email,
                 passwordHash: registerData['passwordHash']
             });
