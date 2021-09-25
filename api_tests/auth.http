@@ -22,3 +22,21 @@ Content-Type: application/json
   "password": "test"
 }
 ###
+
+### Password Reset
+POST {{BASE_URL}}/password-reset
+Content-Type: application/json
+
+{
+  "email": "emalindahwanjiru@live.com"
+}
+###Password reset
+
+### Set new password after reset
+POST {{BASE_URL}}/set-new-password/
+Content-Type: application/json
+
+{
+  "email": "emalindahwanjiru@live.com"
+}
+###

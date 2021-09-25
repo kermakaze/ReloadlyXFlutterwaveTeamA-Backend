@@ -5,3 +5,15 @@ GET {{BASE_URL}}/beneficiary/6146de0ad20a8578b062be86
 Authorization: Bearer {{accessToken}}
 ###Get Beneficary by Id
 
+PATCH {{BASE_URL}}/beneficiary
+Authorization: Bearer {{accessToken}}
+Content-Type: application/json
+
+{
+  "countryCode": "GH",
+  "countryName": "Ghana",
+  "profilePhotoS3": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Justin_Bieber_in_Rosemont%2C_Illinois_%282015%29.jpg/440px-Justin_Bieber_in_Rosemont%2C_Illinois_%282015%29.jpg",
+  "phoneNumber": "+233552587984"
+
+}
+

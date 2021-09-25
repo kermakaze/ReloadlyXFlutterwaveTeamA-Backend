@@ -1,3 +1,18 @@
+POST {{BASE_URL}}/make-payment/testing-campaignkkdkd-1
+Content-Type: application/json
+
+{
+  "phoneNumber" : "0552587984",
+  "fullName": "Elvis Ukoji Solomon",
+  "email": "k98@gmail.com",
+  "amount": 40
+}
+###Test payment link
+
+
+
+GET {{BASE_URL}}/campaign/testing-campaignkkdkd-1
+###Get campaign by slug
 
 @BASE_URL = https://redeemfund-api.herokuapp.com/api
 @accessToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNDM4YTgwN2Q4MTFkZWY5NjEwYTNmMSIsImlhdCI6MTYzMTgxNjMyMH0.5dCEC5StIOTno3Ys-RiK8iwVEc3f-HYHcrH7IM8ilNo
@@ -19,3 +34,4 @@ Authorization: Bearer {{accessToken}}
 
 }
 ###
+

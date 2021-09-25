@@ -6,8 +6,17 @@ const BeneficiarySchema = new Schema({
     firstName: {type: String, required: true},
     lastName: {type: String, required: true},
     email: {type:String, required: true, unique: true},
+
     passwordHash: {type: String, required: true},
-    emailVerified: {type: Boolean, required: true, default: false}
+    passwordResetToken: {type: String, required: false},
+
+    emailVerified: {type: Boolean, required: true, default: false},
+
+    phoneNumber: {type: String, required: false},
+    countryCode: {type: String, required: false},
+    countryName: {type: String, required: false},
+
+    profilePhotoS3: {type: String, required: false}
 
 
 
