@@ -35,50 +35,5 @@ module.exports = {
             })
     },
 
-    async sendPolicyDocumentsEmail(recipientEmail,
-                                  subject,
-                                  body,
-                                  policyDocuments) {//Each document is off form {url: "url", filename:""}
-        try {
-            const msg = {
-                to: recipientEmail,
-                from: process.env.EMAIL_KEY,
-                subject: subject,
-                text: body,
-                attachments: [
-                    /*{
 
-                        content: stUrl,
-                        filename: 'MotorSticker.pdf',
-                        type: 'application/pdf',
-                        disposition: 'attachment',
-                        content_id: 'sticker_id',
-                    },*/
-                ],
-            };
-
-             for (const urlObj of policyDocuments) {
-                msg.attachments.push({
-                    content:  await getBase64(urlObj.url),
-                    filename: urlObj.filename,
-                    type: 'application/pdf',
-                    disposition: 'attachment',
-                    content_id: 'sticker_id',
-                })
-
-            }
-            //const stUrl = await getBase64(stickerUrl);
-            //console.log(stUrl);
-
-            await sgMail.send(msg);
-
-            console.log(`Policy documents emailed to: ${recipientEmail}`);
-
-
-        } catch (e) {
-            console.error(e.response.body);
-        }
-
-
-    }
 };

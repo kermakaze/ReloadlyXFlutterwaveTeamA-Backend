@@ -1,0 +1,10 @@
+POST {{BASE_URL}}/inquiry
+Content-Type: application/json
+
+{
+  "name": "Elvis Ukoji Solomon",
+  "message": "Hello World",
+  "email": "ukojielvis@gmail.com",
+  "subject": "Hi"
+}
+###Test Inquiry
