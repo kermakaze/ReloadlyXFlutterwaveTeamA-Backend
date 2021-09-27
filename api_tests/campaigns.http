@@ -26,7 +26,10 @@ Authorization: Bearer {{accessToken}}
 {
   "title": "Lorep Ipsum",
   "goalAmount": 2000,
-  "description": "Testing mic 123"
+  "description": "Testing mic 123",
+  "fundType": "FLEXIBLE_FUND",
+  "coverPictureS3": "https://4.img-dpreview.com/files/p/E~TC4x3S1180x0~articles/8388257571/Image_Canon_II.jpeg",
+  "platform": "AIRTIME"
 
 }
 ###
