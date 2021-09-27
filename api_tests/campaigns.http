@@ -28,9 +28,12 @@ Content-Type: application/json
 Authorization: Bearer {{accessToken}}
 
 {
-  "title": "Udacity Ipsum",
-  "goalAmount": 5000,
-  "description": "Udacity NanoDegree "
+  "title": "Lorep Ipsum",
+  "goalAmount": 2000,
+  "description": "Testing mic 123",
+  "fundType": "FLEXIBLE_FUND",
+  "coverPictureS3": "https://4.img-dpreview.com/files/p/E~TC4x3S1180x0~articles/8388257571/Image_Canon_II.jpeg",
+  "platform": "AIRTIME"
 
 }
 ###

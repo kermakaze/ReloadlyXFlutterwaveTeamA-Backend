@@ -4,6 +4,7 @@ const AuthController = require("../controllers/AuthController");
 const CampaignController = require('../controllers/CampaignController');
 const UserController = require('../controllers/UserController');
 const PaymentController = require('../controllers/PaymentController');
+const InquiryController = require('../controllers/InquiryController');
 
 const Auth = require('../middleware/auth');
 
@@ -21,7 +22,7 @@ router.post('/set-new-password/:token',AuthController.setNewPassword);
 //Unauthenticated routes for anonymous donation
 router.post('/make-payment/:campaign_slug', PaymentController.getPaymentLinkForCampaign)
 router.get('/campaign/:campaign_slug', CampaignController.getCampaignBySlug)
-
+router.post('/inquiry', InquiryController.sendInquiryEmail);
 
 //Routes beneath this require authentication
 router.use(Auth.checkAuth)
