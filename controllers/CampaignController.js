@@ -10,7 +10,9 @@ module.exports = {
                 description: req.body.description,
                 goalAmount: req.body.goalAmount,
                 type: req.body.type,
-                beneficiary: req.decoded.id//Gotten from JWT decoding
+                beneficiary: req.decoded.id,//Gotten from JWT decoding
+                coverPictureS3: req.body.coverPictureS3,
+                fundType: req.body.fundType
             })
 
             ResponseUtils.sendGenericResponse(res)
