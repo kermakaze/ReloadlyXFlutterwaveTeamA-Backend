@@ -21,6 +21,8 @@ router.post('/set-new-password/:token',AuthController.setNewPassword);
 
 //Unauthenticated routes for anonymous donation
 router.post('/make-payment/:campaign_slug', PaymentController.getPaymentLinkForCampaign)
+router.get('/campaigns', CampaignController.getCampaigns);
+
 router.get('/campaign/:campaign_slug', CampaignController.getCampaignBySlug)
 router.post('/inquiry', InquiryController.sendInquiryEmail);
 
@@ -28,9 +30,8 @@ router.post('/inquiry', InquiryController.sendInquiryEmail);
 router.use(Auth.checkAuth)
 
 //Campaign routes
-router.route('/campaigns')
-    .post(CampaignController.addCampaign)
-    .get(CampaignController.getCampaigns);
+router.post('/campaigns',CampaignController.addCampaign)
+
 
 
 //User Routes
