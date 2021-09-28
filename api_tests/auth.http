@@ -33,10 +33,10 @@ Content-Type: application/json
 ###Password reset
 
 ### Set new password after reset
-POST {{BASE_URL}}/set-new-password/
+POST {{BASE_URL}}/set-new-password/:token
 Content-Type: application/json
 
 {
-  "email": "emalindahwanjiru@live.com"
+  "password": "password"
 }
 ###

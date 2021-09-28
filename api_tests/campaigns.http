@@ -11,7 +11,7 @@ Content-Type: application/json
 
 
 
-GET {{BASE_URL}}/campaign/testing-campaignkkdkd-1
+GET {{BASE_URL}}/campaign/react-js-crash-course-on-skill-share
 ###Get campaign by slug
 
 @BASE_URL = https://redeemfund-api.herokuapp.com/api
@@ -28,7 +28,7 @@ Content-Type: application/json
 Authorization: Bearer {{accessToken}}
 
 {
-  "title": "Lorep Ipsum",
+  "title": "Lorep Ipsum test three",
   "goalAmount": 2000,
   "description": "Testing mic 123",
   "fundType": "FLEXIBLE_FUND",
