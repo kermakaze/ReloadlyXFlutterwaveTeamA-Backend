@@ -18,7 +18,10 @@ const CampaignSchema = new Schema({
 
     type: {type: String, enum: ['NANO_DEGREE','AIRTIME', 'OTHER']},//TODO add types more as idea matures
 
-    beneficiary: {type: String, ref: 'Beneficiary', required: true}
+    beneficiary: {type: String, ref: 'Beneficiary', required: true},
+
+    coverPictureS3:{type: String, required: false},
+    platform: {type: String, required: false}
 
 
 }, {collection: "campaigns", timestamps: true});
