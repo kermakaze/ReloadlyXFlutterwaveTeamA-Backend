@@ -1,0 +1,529 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+      "title": "RedeemFund Api Documentation",
+      "description": "RedeemFunds sample server. You can use this access token  `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNDM4YTgwN2Q4MTFkZWY5NjEwYTNmMSIsImlhdCI6MTYzMTgxNjMyMH0.5dCEC5StIOTno3Ys-RiK8iwVEc3f-HYHcrH7IM8ilNo` to test the authorization filters.",
+      "version": "1.0.0"
+    },
+    "servers": [
+      {
+        "url": "https://redeemfund-api.herokuapp.com/api"
+      },
+      {
+        "url": "http://redeemfund-api.herokuapp.com/api"
+      }
+    ],
+    "security": [
+      {
+        "bearerAuth": []
+      }
+    ],
+    "tags": [
+      {
+        "name": "auth",
+        "description": "Authentication operations Signin and Registration"
+      },
+      {
+        "name": "beneficiary",
+        "description": "Operations about beneficiary"
+      },
+      {
+        "name": "campaign",
+        "description": "Operations about a campaign"
+      },
+      {
+        "name": "inquiry",
+        "description": "Contact us operation"
+      }
+    ],
+    "paths": {
+      "/register": {
+        "post": {
+          "tags": [
+            "auth"
+          ],
+          "summary": "Add a new user to the platform",
+          "requestBody": {
+            "description": "User object that needs to be added to the website",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Register"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "User created successfully",
+              "content": {}
+            },
+            "405": {
+              "description": "Invalid input",
+              "content": {}
+            }
+          },
+          "x-codegen-request-body-name": "body"
+        }
+      },
+      "/login": {
+        "post": {
+          "tags": [
+            "auth"
+          ],
+          "summary": "Login existing user",
+          "description": "Logs in user into the platform",
+          "requestBody": {
+            "description": "User object including email and password of registered user",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserLogin"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "successful operation",
+              "content": {}
+            },
+            "400": {
+              "description": "Invalid status value",
+              "content": {}
+            }
+          },
+          "x-codegen-request-body-name": "body"
+        }
+      },
+      "/password-reset": {
+        "post": {
+          "tags": [
+            "auth"
+          ],
+          "summary": "Send Password Reset Request",
+          "description": "User enters the email they registered with and get a link in their mail box to reset their password",
+          "requestBody": {
+            "description": "Email address of registered user",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "Successful Operation",
+              "content": {}
+            },
+            "400": {
+              "description": "Invalid Email supplied",
+              "content": {}
+            },
+            "404": {
+              "description": "Not found",
+              "content": {}
+            }
+          },
+          "x-codegen-request-body-name": "body"
+        }
+      },
+      "/beneficiary/{userId}": {
+        "get": {
+          "tags": [
+            "beneficiary"
+          ],
+          "summary": "Get beneficiary by ID",
+          "description": "For valid response try integer IDs",
+          "operationId": "getBeneficiaryById",
+          "parameters": [
+            {
+              "name": "userId",
+              "in": "path",
+              "description": "ID of user that needs to be fetched eg 61498374e374d09f5f3d2b6a",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "successful operation",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/User"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Invalid ID supplied",
+              "content": {}
+            },
+            "404": {
+              "description": "User not found",
+              "content": {}
+            }
+          }
+        }
+      },
+      "/beneficiary": {
+        "patch": {
+          "tags": [
+            "beneficiary"
+          ],
+          "summary": "Update beneficiary's profile details",
+          "description": "Beneficiary uploads their profile details ie profile picture, phone number and country",
+          "operationId": "updateProfile",
+          "requestBody": {
+            "description": "User's profile details",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Profile"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "default": {
+              "description": "successful operation",
+              "content": {}
+            }
+          }
+        }
+      },
+      "/campaigns": {
+        "get": {
+          "tags": [
+            "campaign"
+          ],
+          "summary": "Get all campaigns",
+          "operationId": "getCampaigns",
+          "responses": {
+            "200": {
+              "description": "successful operation",
+              "content": {
+                "application/xml": {
+                  "schema": {
+                    "$ref": "#/components/schemas/User"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/User"
+                  }
+                }
+              }
+            },
+            "404": {
+              "description": "Campaign not found",
+              "content": {}
+            }
+          }
+        },
+        "post": {
+          "tags": [
+            "campaign"
+          ],
+          "summary": "Adds new campaign",
+          "operationId": "postCampaign",
+          "requestBody": {
+            "description": "Campaign object containing the campaign data",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Campaign"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "successful operation",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/User"
+                  }
+                }
+              }
+            },
+            "404": {
+              "description": "Not found",
+              "content": {}
+            }
+          }
+        }
+      },
+      "/campaign/{slug}": {
+        "get": {
+          "tags": [
+            "campaign"
+          ],
+          "summary": "Get campaign by slug",
+          "operationId": "getCampaignBySlug",
+          "parameters": [
+            {
+              "name": "slug",
+              "in": "path",
+              "description": "The slug of the campaign that needs to be fetched eg react-js-crash-course-on-skill-share",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "successful operation",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Campaign"
+                  }
+                }
+              }
+            },
+            "404": {
+              "description": "Campaign not found",
+              "content": {}
+            }
+          }
+        }
+      },
+      "/make-payment/{slug}": {
+        "post": {
+          "tags": [
+            "auth"
+          ],
+          "summary": "Add a new user to the platform",
+          "parameters": [
+            {
+              "name": "slug",
+              "in": "path",
+              "description": "The slug of the campaign that is being donated to eg react-js-crash-course-on-skill-share",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "successful operation"
+            },
+            "405": {
+              "description": "Invalid input"
+            }
+          }
+        }
+      },
+      "/inquiry": {
+        "post": {
+          "tags": [
+            "inquiry"
+          ],
+          "summary": "Send a message to the system admin",
+          "requestBody": {
+            "description": "User object that sends a message to the system admin",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Message"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "Message sent successfully",
+              "content": {}
+            },
+            "405": {
+              "description": "Message send failed",
+              "content": {}
+            }
+          },
+          "x-codegen-request-body-name": "body"
+        }
+      }
+    },
+    "components": {
+      "securitySchemes": {
+        "bearerAuth": {
+          "type": "http",
+          "scheme": "bearer",
+          "bearerFormat": "JWT"
+        }
+      },
+      "schemas": {
+        "User": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "firstName": {
+              "type": "string"
+            },
+            "lastName": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "password": {
+              "type": "string"
+            },
+            "countryCode": {
+              "type": "string"
+            },
+            "countrName": {
+              "type": "string"
+            },
+            "phoneNumber": {
+              "type": "string"
+            },
+            "profilePhotoS3": {
+              "type": "string"
+            }
+          },
+          "xml": {
+            "name": "User"
+          }
+        },
+        "Register": {
+          "type": "object",
+          "properties": {
+            "firstName": {
+              "type": "string"
+            },
+            "lastName": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "password": {
+              "type": "string"
+            }
+          },
+          "xml": {
+            "name": "User"
+          }
+        },
+        "UserLogin": {
+          "type": "object",
+          "properties": {
+            "email": {
+              "type": "string"
+            },
+            "password": {
+              "type": "string"
+            }
+          }
+        },
+        "Profile": {
+          "type": "object",
+          "properties": {
+            "countryCode": {
+              "type": "string"
+            },
+            "countryName": {
+              "type": "string"
+            },
+            "profilePhotoS3": {
+              "type": "string"
+            },
+            "phoneNumber": {
+              "type": "string"
+            }
+          },
+          "xml": {
+            "name": "Profile"
+          }
+        },
+        "Campaign": {
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "string"
+            },
+            "goalAmount": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "description": {
+              "type": "string"
+            },
+            "fundType": {
+              "type": "string",
+              "description": "Type of funding",
+              "enum": [
+                "flex",
+                "full"
+              ]
+            },
+            "coverPictureS3": {
+              "type": "string"
+            },
+            "platform": {
+              "type": "string",
+              "description": "Type of funding",
+              "enum": [
+                "skill",
+                "course",
+                "airtime"
+              ]
+            }
+          },
+          "xml": {
+            "name": "Campaign"
+          }
+        },
+        "Message": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "message": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "subject": {
+              "type": "string"
+            }
+          }
+        },
+        "ApiResponse": {
+          "type": "object",
+          "properties": {
+            "code": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "type": {
+              "type": "string"
+            },
+            "message": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }

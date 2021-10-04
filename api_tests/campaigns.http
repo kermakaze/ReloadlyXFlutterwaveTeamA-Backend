@@ -15,7 +15,7 @@ GET {{BASE_URL}}/campaign/react-js-crash-course-on-skill-share
 ###Get campaign by slug
 
 @BASE_URL = https://redeemfund-api.herokuapp.com/api
-@accessTokens = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNDM4YTgwN2Q4MTFkZWY5NjEwYTNmMSIsImlhdCI6MTYzMTgxNjMyMH0.5dCEC5StIOTno3Ys-RiK8iwVEc3f-HYHcrH7IM8ilNo
+@accessToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNDM4YTgwN2Q4MTFkZWY5NjEwYTNmMSIsImlhdCI6MTYzMTgxNjMyMH0.5dCEC5StIOTno3Ys-RiK8iwVEc3f-HYHcrH7IM8ilNo
 
 
 GET {{BASE_URL}}/campaigns
