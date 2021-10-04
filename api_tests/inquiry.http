@@ -1,9 +1,11 @@
+@BASE_URL = https://redeemfund-api.herokuapp.com/api
+
 POST {{BASE_URL}}/inquiry
 Content-Type: application/json
 
 {
   "name": "Elvis Ukoji Solomon",
-  "message": "Hello World",
+  "message": "Hello World wre",
   "email": "ukojielvis@gmail.com",
   "subject": "Hi"
 }
